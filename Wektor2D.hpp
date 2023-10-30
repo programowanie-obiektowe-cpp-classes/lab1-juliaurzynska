@@ -1,8 +1,6 @@
 ﻿#include <iostream>
 #include <cmath>
 
-#define M_PI 3.14159265358979323846
-
 class Informer {
 public:
     Informer() {
@@ -32,6 +30,7 @@ public:
     Wektor2D() {
         x = 0.0;
         y = 0.0;
+        num_wek++;
     }
     static Wektor2D kart(double x, double y) {
         return Wektor2D(x, y);
@@ -71,10 +70,12 @@ public:
         return y;
     }
 
-    Wektor2D operator+(const Wektor2D& other) const {
+    Wektor2D operator+(const Wektor2D& other) 
+    {
         return Wektor2D(x + other.x, y + other.y);
     }
-    double operator*(const Wektor2D& other) const {
+    double operator*(const Wektor2D& other)
+    {
         return (x * other.x + y * other.y);
     }
     friend std::ostream& operator<<(std::ostream& os, const Wektor2D& wektor) {
@@ -88,7 +89,3 @@ public:
 };
 
 int Wektor2D::num_wek = 0;
-
-int main() {
-    
-}
